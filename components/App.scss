@@ -1,0 +1,155 @@
+@media (min-width: 1001px){
+
+    .header{
+        width: 100%;
+        max-width: 1920px;
+        height: 72px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+
+        .container{
+            max-width: 1260px;
+            width: 100%;
+            margin: 0 auto;
+
+            .logo_container{
+                height: 26px;
+                display: table;
+                float: left;
+                margin: 23px 0 0 0;
+
+                & > *{
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+                .logo{
+                    width: 44.8px;
+                    height: 26px;
+                    //-webkit-transform: rotate(-360deg);
+                    //transform: rotate(-360deg);
+                    background-color: #007fff;
+                }
+
+                .title{
+                    width: 124px;
+                    height: 24px;
+                    font-family: AktivGroteskCorp;
+                    font-size: 24px;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1;
+                    color: #0080ff;
+                    padding: 0 0 0 8.2px;
+                    cursor: default;
+                }
+
+                .city_container{
+                    display: table;
+                    float: right;
+                    cursor: pointer;
+
+                    & > *{
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+
+                    .icon_arrow{
+                        width: 11px;
+                        height: 11px;
+                        //-webkit-transform: rotate(-90deg);
+                        //transform: rotate(-90deg);
+                        border: solid 1px #007fff;
+                        background-color: #007fff;
+                    }
+
+                    .city{
+                        padding: 0 0 0 5px;
+                        width: 40px;
+                        height: 11px;
+                        font-family: AktivGroteskCorp;
+                        font-size: 11px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1;
+                        color: #0080ff;
+                    }
+                }
+            }
+
+            .right_container{
+                width: 325px;
+                position: relative;
+                float: right;
+                top: 0;
+                right: 0;
+
+                & > * {
+                    display: inline-block;
+                }
+
+                .gift_container{
+                    display: table;
+                    float: left;
+                    cursor: pointer;
+                    margin: 24px 0 0 0;
+
+                    & > * {
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                    .gift_icon{
+                        width: 22px;
+                        height: 22px;
+                        background-color: #007fff;
+                    }
+
+                    .gift_title{
+                        padding: 0 0 0 11px;
+                        width: 104px;
+                        height: 18px;
+                        font-family: AktivGroteskCorp;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.29;
+                        color: #000000;
+                    }
+                }
+
+                .profile_container{
+                    float: right;
+                    vertical-align: middle;
+
+                    .profile_unautorized{
+                        width: 133px;
+                        height: 44px;
+                        border-radius: 2px;
+                        background-color: #007fff;
+                        cursor: pointer;
+                        margin: 14px 0 0 0;
+                        border: none;
+                        font-family: AktivGroteskCorp;
+                        font-size: 14px;
+                        font-weight: bold;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.29;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .dialog_container {
+        & > div {
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25) !important;
+        }
+    }
+}
