@@ -1,0 +1,263 @@
+.footer{
+    max-width: 1260px;
+    margin: 0 auto;
+
+    .refs_container{
+        height: 127px;
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+        max-width: 1260px;
+
+        .refs_left{
+            width: 665px;
+            float: left;
+            margin: 0 0 0 50px;
+
+            .refs_top{
+
+                & > div:hover{
+                    color: #0080ff;
+                }
+
+                & > div:first-child{
+                    margin: 39px 0 0 0;
+                }
+
+                & > div{
+                    height: 20px;
+                    font-family: AktivGroteskCorp;
+                    font-size: 16px;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.25;
+                    color: #000000;
+                    display: inline-block;
+                    cursor: pointer;
+                    margin: 39px 0 0 20px;
+                }
+            }
+
+            .refs_bottom{
+                margin: 10px 0 0 0;
+
+                & > div:first-child{
+                    margin: 0;
+                }
+
+                & > div{
+                    display: inline-block;
+                    margin: 0 0 0 16px;
+                    cursor: pointer;
+                    font-family: AktivGroteskCorp;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.29;
+                    color: #808080;
+                }
+
+            }
+        }
+
+        .refs_social{
+            float: right;
+            width: 354px;
+            margin: 39px 0 0 0;
+
+            & > div{
+                width: 48px;
+                height: 48px;
+                display: inline-block;
+                margin: 0 0 0 16px;
+                cursor: pointer;
+            }
+
+            .facebook{
+                background: url(images/facebook.png) round 0 0;
+                margin: 0;
+            }
+
+            .twitter{
+                background: url(images/twitter.png) round 0 0;
+            }
+
+            .vk{
+                background: url(images/vk.png) round 0 0;
+            }
+
+            .ok{
+                background: url(images/ok.png) round 0 0;
+            }
+
+            .instagram{
+                background: url(images/instagram.png) round 0 0;
+            }
+        }
+    }
+
+    .bottom_container{
+
+        .top{
+            padding: 40px 0 0 0;
+
+            & > *{
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .subscribe{
+                margin: 0 0 0 50px;
+                width: 308px;
+                height: 62px;
+                border-radius: 2px;
+                background-color: #f3f3f3;
+
+                & > input {
+                    background-color: inherit;
+                    margin: 22px 0 0 20px;
+                    height: 18px;
+                    font-family: AktivGroteskCorp;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.29;
+                    color: #808080;
+                    width: 90%;
+                    border: none;
+                    outline: none;
+                }
+            }
+
+            .button{
+                margin: 0 0 0 8px;
+                border-radius: 2px;
+                width: 172px;
+                height: 62px;
+                background-color: #007fff;
+                font-family: AktivGroteskCorp;
+                font-size: 16px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.25;
+                color: #ffffff;
+                border: none;
+                cursor: pointer;
+            }
+
+            .apps{
+                float: right;
+
+                & > div {
+                    display: inline-block;
+                }
+
+                .app_store{
+                    margin: 0 20px 0 0;
+                    width: 190px;
+                    height: 62px;
+                    border-radius: 2px;
+                    background-color: #f3f3f3;
+                    cursor: pointer;
+
+                    & > *{
+                        display: inline-block;
+                    }
+
+                    .icon{
+                        width: 42px;
+                        margin: 10px 0 0 22px;
+                        font-size: 334%;
+                        vertical-align: top;
+                    }
+
+                    .title {
+                        width: 125px;
+                        border-left: 1px solid #e6e6e6;
+                        height: 100%;
+                        font-family: AktivGroteskCorp;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.29;
+                        color: #808080;
+                        padding: 12px 0 0 17px;
+
+                        div{
+                            width: 100%;
+                            height: 20px;
+                            font-family: AktivGroteskCorp;
+                            font-size: 16px;
+                            font-weight: normal;
+                            font-style: normal;
+                            font-stretch: normal;
+                            line-height: 1.25;
+                            color: #000000;
+                        }
+                    }
+                }
+
+                .google_play{
+                    width: 192px;
+                    height: 62px;
+                    border-radius: 2px;
+                    background-color: #f3f3f3;
+                    margin: 0 50px 0 0;
+                    cursor: pointer;
+
+                    & > *{
+                        display: inline-block;
+                    }
+
+                    .icon{
+                        margin: 14.4px 13px 0 21px;
+                        background: url(images/google_play.png) no-repeat 0 0;
+                        width: 30px;
+                        height: 33.9px;
+                    }
+
+                    .title{
+                        padding: 12px 0 0 17px;
+                        border-left: 1px solid #e6e6e6;
+                        width: 108px;
+                        height: 100%;
+                        vertical-align: top;
+                        font-family: AktivGroteskCorp;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.29;
+                        color: #808080;
+
+                        div {
+                            font-family: AktivGroteskCorp;
+                            font-size: 16px;
+                            font-weight: normal;
+                            font-style: normal;
+                            font-stretch: normal;
+                            line-height: 1.25;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom{
+            opacity: 0.5;
+            font-family: AktivGroteskCorp;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.29;
+            color: #808080;
+            margin: 38px 0 0 50px;
+        }
+    }
+}

@@ -1,7 +1,26 @@
+@font-face{
+    font-family: AktivGroteskCorp;
+    src: url(fonts/AktivGrotesk_Corp_Md.ttf);
+    font-weight: normal;
+}
+// 
+// @font-face{
+//     font-family: AktivGroteskCorp;
+//     src: url(fonts/AktivGrotesk_Corp_Bd.ttf);
+//     font-weight: bold;
+// }
+
+@font-face{
+    font-family: AktivGroteskCorp;
+    src: url(fonts/AktivGrotesk_Corp_Lt.ttf);
+    font-weight: lighter;
+}
+
 body{
     margin: 0;
 }
 
 *{
     box-sizing: border-box;
+    font-family: AktivGroteskCorp;
 }

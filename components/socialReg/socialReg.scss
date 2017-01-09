@@ -1,0 +1,50 @@
+.social_container{
+
+    & > button{
+        height: 62px;
+        min-width: 100px;
+        max-width: 354px;
+        width: 100%;
+        margin: 10px 0 0 0;
+        border-radius: 2px;
+        font-family: AktivGroteskCorp;
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+
+        & > div{
+            margin: 0 0 0 24px;
+            text-align: left;
+        }
+    }
+
+    .title {
+        width: 251px;
+        height: 20px;
+        font-family: AktivGroteskCorp;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        color: #000000;
+    }
+
+    .fb {
+        margin: 20px 0 0 0;
+        background-color: #4a649f;
+    }
+
+    .vk {
+        background-color: #567696;
+    }
+
+    .ok {
+        background-color: #e85a00;
+    }
+}
