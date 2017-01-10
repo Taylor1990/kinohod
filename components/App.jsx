@@ -11,6 +11,7 @@ import { config } from './App.config'
 import SignPopup from './signPopup/signPopup.jsx'
 import LoginPopup from './loginPopup/loginPopup.jsx'
 import styles from './App.scss'
+import Tabs from './tabs/Tabs.jsx'
 
 injectTapEventPlugin()
 
@@ -118,6 +119,8 @@ export default class extends Component{
                                 }}/>
                         </Dialog>
                     </div>
+                    <Tabs>
+                    </Tabs>
                     <Footer />
                 </div>
             </MuiThemeProvider>

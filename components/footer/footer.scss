@@ -153,6 +153,7 @@
 
                 & > div {
                     display: inline-block;
+                    vertical-align: top;
                 }
 
                 .app_store{
@@ -258,6 +259,7 @@
             line-height: 1.29;
             color: #808080;
             margin: 38px 0 0 50px;
+            cursor: default;
         }
     }
 }

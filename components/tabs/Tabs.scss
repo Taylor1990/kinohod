@@ -1,0 +1,39 @@
+.tabs_container{
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 14px 30px 0;
+    height: 72px;
+
+    .tabs{
+        width: 265px;
+        float: left;
+        margin: 10px 0 0 0;
+        
+        & > div:hover{
+            color: #0080ff;
+        }
+
+        & > div{
+            display: inline-block;
+            font-family: AktivGroteskCorp;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        .movies{
+            margin: 0 0 0 30px;
+        }
+    }
+
+    .search{
+        float: right;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+}
