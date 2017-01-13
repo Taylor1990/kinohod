@@ -5,7 +5,11 @@ var webpack = require('webpack'),
 module.exports = {
     devtool: 'cheap-module-source-map',
     devServer: {
-        hot: true
+        hot: true,
+        host: 'localhost.specialurl.com',
+        port: '1234',
+        secure: false,
+        https: true
     },
     entry: {
         bundle: path.resolve(__dirname, 'main.js'),

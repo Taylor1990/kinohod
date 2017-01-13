@@ -6,6 +6,12 @@ import appReducer from './reducer';
 
 export default class Store {
     constructor(history){
+        const initialState = {
+            app: {
+                loading: false
+            }
+        };
+
         const reducer = combineReducers({
             app: appReducer,
             routing: routerReducer
@@ -15,7 +21,7 @@ export default class Store {
         this.store = compose(
             applyMiddleware(routingMiddleware, thunk),
             window.devToolsExtension ? window.devToolsExtension() : f => f
-        )(createStore)(reducer);
+        )(createStore)(reducer,initialState);
     }
 
     getStore(){

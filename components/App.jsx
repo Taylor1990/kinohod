@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
 import Dialog from 'material-ui/Dialog'
 import RaisedButton from 'material-ui/RaisedButton'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -12,10 +13,13 @@ import SignPopup from './signPopup/signPopup.jsx'
 import LoginPopup from './loginPopup/loginPopup.jsx'
 import styles from './App.scss'
 import Tabs from './tabs/Tabs.jsx'
+import Ads from './ads/Ads.jsx'
+import Loader from './loader/Loader.jsx'
+import {getCities} from './../actions'
 
 injectTapEventPlugin()
 
-export default class extends Component{
+class App extends Component{
     constructor(props) {
         super(props)
 
@@ -27,7 +31,13 @@ export default class extends Component{
     }
 
     clickSelectCity() {
-        this.state.selectCity ? this.setState({selectCity: false}) : this.setState({selectCity: true})
+        if(this.state.selectCity){
+            this.setState({selectCity: false})
+        } else {
+            this.props.dispatch(getCities(() =>{
+                this.setState({selectCity: true})
+            }));
+        }
     }
 
     signPopup_open() {
@@ -50,10 +60,19 @@ export default class extends Component{
         this.setState({signPopup: true, loginPopup: false})
     }
 
+    onClickBody(e){
+        if(this.state.selectCity){
+            console.log(e.target)
+            this.setState({
+                selectCity: false
+            })
+        }
+    }
+
     render() {
         return (
             <MuiThemeProvider>
-                <div>
+                <div onClick = {this.onClickBody.bind(this)}>
                     <div className = {styles.header}>
                         <div className = {styles.container}>
                             <div className = {styles.logo_container}>
@@ -85,7 +104,9 @@ export default class extends Component{
                             </div>
                             {
                                 this.state.selectCity ?
-                                    <SelectCity />
+                                    <div className = {styles.select_city}>
+                                        <SelectCity />
+                                    </div>
                                 : ''
                             }
 
@@ -119,11 +140,20 @@ export default class extends Component{
                                 }}/>
                         </Dialog>
                     </div>
-                    <Tabs>
-                    </Tabs>
+                    <Tabs/>
+                    <Ads/>
                     <Footer />
+                    <Loader />
                 </div>
             </MuiThemeProvider>
         )
     }
 }
+
+function select(state){
+    return {
+
+    }
+}
+
+export default connect(select)(App)

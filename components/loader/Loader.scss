@@ -1,0 +1,10 @@
+.dialog_container{
+    & > div {
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+}
+
+.circular{
+    text-align: center;
+}
