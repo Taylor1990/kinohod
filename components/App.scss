@@ -1,8 +1,8 @@
-@media (min-width: 1260px){
+@media (min-width: 1360px){
 
     .header{
         width: 100%;
-        max-width: 1260px;
+        max-width: 1360px;
         height: 72px;
         margin: 0 auto;
         padding: 0 30px;
@@ -81,13 +81,28 @@
                 }
             }
 
-            .select_city__transition-enter{
-                opacity: 0.01;
+            .select_city__transition{
+                max-height: 0px ;
+                overflow: hidden;
+            }
 
-                .select_city__transition-enter-active{
-                    opacity: 1;
-                    transition: opacity 500ms ease-in;
-                }
+            .select_city__transition__active{
+                max-height: 610px ;
+                -moz-transition: all 0.5s ease-in;
+                -o-transition: all 0.5s ease-in;
+                -webkit-transition: all 0.5s ease-in;
+            }
+
+            .select_city__transition__leave{
+                max-height: 610px;
+                overflow: hidden;
+            }
+
+            .select_city__transition__leave__active{
+                max-height: 0px;
+                -moz-transition: all 0.5s ease-in;
+                -o-transition: all 0.5s ease-in;
+                -webkit-transition: all 0.5s ease-in;
             }
 
             .right_container{

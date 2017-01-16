@@ -12,6 +12,12 @@ export default function(state, action){
             case 'SET_CITIES':
                 setCities(state, action);
                 break;
+            case 'SET_SLIDERBIG':
+                setSliderBig(state, action);
+                break;
+            case 'SET_SLIDERRENTMOVIES':
+                setSliderRentMovies(state, action);
+                break;
         }
     }
 
@@ -31,4 +37,14 @@ function loaded(state, action) {
 function setCities(state, action){
     state.cities = action.data;
     action.callback();
+}
+
+function setSliderBig(state, action){
+    state.movies_now = action.data;
+    action.callback();
+}
+
+function setSliderRentMovies(state, action){
+    state.movies_rent = action.data;
+    action.callback(action.data);
 }

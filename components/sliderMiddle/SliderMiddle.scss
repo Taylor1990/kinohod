@@ -1,0 +1,81 @@
+.slider_container{
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 40px 0 0 50px;
+
+    .title{
+        height: 40px;
+        font-family: AktivGroteskCorp;
+        font-size: 32px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        color: #7f602a;
+    }
+
+    .slider{
+        height: 354px;
+
+        .item_container{
+            width: 236px;
+            height: inherit;
+            display: inline-block;
+            margin: 0 0 0 20px;
+
+            .item{
+                height: inherit;
+                width: inherit;
+                float:left;
+                position: relative;
+            }
+
+            .icon{
+                float:left;
+                position: relative;
+                left: 6px;
+                bottom: 351px;
+                color: rgba(64, 64, 64, 0.5);
+                cursor: pointer;
+            }
+        }
+
+        .item_container:first-child{
+            margin: 0;
+        }
+
+        .movie_next_container{
+            height: inherit;
+            width: 30px;
+            opacity: 0.8;
+            margin: 0 0 0 10px;
+            display: inline-block;
+
+            .movie_next{
+                width: 100%;
+                height: inherit;
+                margin: 0 0 0 10px;
+                float: left;
+                position: relative;
+            }
+
+            .icon_block{
+                width: 40px;
+                height: 64px;
+                border-radius: 2px;
+                background-color: rgba(64, 64, 64, 0.5);
+                float: left;
+                position:relative;
+                bottom: 208px;
+                cursor: pointer;
+
+                .icon{
+                    color: white;
+                    top: 12px;
+                    position: relative;
+                    left: 14px;
+                }
+            }
+        }
+    }
+}

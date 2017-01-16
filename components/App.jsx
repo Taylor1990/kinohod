@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import Icons from 'react-uikit-icons'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import SelectCity from './selectCity/selectCity.jsx'
 import Footer from './footer/footer.jsx'
@@ -15,7 +16,9 @@ import styles from './App.scss'
 import Tabs from './tabs/Tabs.jsx'
 import Ads from './ads/Ads.jsx'
 import Loader from './loader/Loader.jsx'
-import {getCities} from './../actions'
+import {getCities, getSliderBig, getSliderRentMovies} from './../actions'
+import SliderBig from './sliderBig/SliderBig.jsx'
+import SliderMiddle from './sliderMiddle/SliderMiddle.jsx'
 
 injectTapEventPlugin()
 
@@ -26,8 +29,20 @@ class App extends Component{
         this.state = {
             selectCity: false,
             signPopup: false,
-            loginPopup: false
+            loginPopup: false,
+            visSliderBig: false,
+            visSliderRentMovies: false
         }
+    }
+
+    componentWillMount(){
+        this.props.dispatch(getSliderBig('city1', () => {
+            this.setState({visSliderBig: true})
+        }))
+
+        this.props.dispatch(getSliderRentMovies('city1', (movies_rent) => {
+            this.setState({visSliderRentMovies: true, movies_rent: movies_rent})
+        }))
     }
 
     clickSelectCity() {
@@ -62,7 +77,6 @@ class App extends Component{
 
     onClickBody(e){
         if(this.state.selectCity){
-            console.log(e.target)
             this.setState({
                 selectCity: false
             })
@@ -81,7 +95,7 @@ class App extends Component{
                                     КИНОХОД
                                     <div className = {styles.city_container}>
                                         <img className = {styles.icon_arrow}/>
-                                        <div className = {styles.city}
+                                        <div id = 'city1' className = {styles.city}
                                              onClick = {this.clickSelectCity.bind(this)}>
                                             Москва
                                         </div>
@@ -102,13 +116,22 @@ class App extends Component{
                                     </button>
                                 </div>
                             </div>
-                            {
-                                this.state.selectCity ?
-                                    <div className = {styles.select_city}>
-                                        <SelectCity />
-                                    </div>
-                                : ''
-                            }
+
+                            <ReactCSSTransitionGroup
+                                    transitionName = {{
+                                        enter: styles.select_city__transition,
+                                        enterActive: styles.select_city__transition__active,
+                                        leave: styles.select_city__transition__leave,
+                                        leaveActive: styles.select_city__transition__leave__active
+                                    }}
+                                    transitionEnterTimeout={500}
+                                    transitionLeaveTimeout={500}>
+                                {
+                                    this.state.selectCity ?
+                                            <SelectCity />
+                                    : ''
+                                }
+                            </ReactCSSTransitionGroup>
 
                         </div>
 
@@ -141,6 +164,12 @@ class App extends Component{
                         </Dialog>
                     </div>
                     <Tabs/>
+                    {this.state.visSliderBig ?
+                        <SliderBig />
+                    : ''}
+                    {this.state.visSliderRentMovies ?
+                        <SliderMiddle title = 'В прокате' movies = {this.state.movies_rent}/>
+                    : ''}
                     <Ads/>
                     <Footer />
                     <Loader />
