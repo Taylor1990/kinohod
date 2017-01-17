@@ -18,6 +18,21 @@ export default function(state, action){
             case 'SET_SLIDERRENTMOVIES':
                 setSliderRentMovies(state, action);
                 break;
+            case 'SET_SLIDERSOONMOVIES':
+                setSliderSoonMovies(state, action);
+                break;
+            case 'SET_GENRES':
+                setGenres(state, action);
+                break;
+            case 'SET_COMEDYMOVIES':
+                setComedyMovies(state, action);
+                break;
+            case 'SET_FAMILYMOVIES':
+                setFamilyMovies(state, action);
+                break;
+            case 'SET_DETECTIVEMOVIES':
+                setDetectiveMovies(state, action);
+                break;
         }
     }
 
@@ -46,5 +61,29 @@ function setSliderBig(state, action){
 
 function setSliderRentMovies(state, action){
     state.movies_rent = action.data;
+    action.callback(action.data);
+}
+
+function setSliderSoonMovies(state, action){
+    state.movies_soon = action.data;
+    action.callback(action.data);
+}
+
+function setGenres(state, action){
+    state.genres = action.data;
+}
+
+function setComedyMovies(state, action){
+    state.comedy_movies = action.data;
+    action.callback(action.data);
+}
+
+function setFamilyMovies(state, action){
+    state.family_movies = action.data;
+    action.callback(action.data);
+}
+
+function setDetectiveMovies(state, action){
+    state.detective_movies = action.data;
     action.callback(action.data);
 }

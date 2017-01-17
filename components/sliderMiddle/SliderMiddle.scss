@@ -1,21 +1,59 @@
 .slider_container{
     max-width: 1360px;
-    margin: 0 auto;
-    padding: 40px 0 0 50px;
 
-    .title{
-        height: 40px;
-        font-family: AktivGroteskCorp;
-        font-size: 32px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.25;
-        color: #7f602a;
+    .head{
+
+        .title{
+            height: 40px;
+            font-family: AktivGroteskCorp;
+            font-size: 32px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.25;
+            color: #7f602a;
+            display: inline;
+        }
+
+        .months{
+            height: 28px;
+            float: right;
+            position: relative;
+            top: 13px;
+
+            .month:first-letter{
+                text-transform: uppercase;
+            }
+
+            .month{
+                display: inline-block;
+                font-family: AktivGroteskCorp;
+                font-size: 14px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.29;
+                color: #0080ff;
+                width: 100px;
+                height: 28px;
+                background: white;
+                border: none;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .month__checked{
+                color: #80612d;
+                border-radius: 2px;
+                border: solid 1px #7f612c;
+                cursor: default;
+            }
+        }
     }
 
     .slider{
         height: 354px;
+        margin: 20px 0 0 0;
 
         .item_container{
             width: 236px;

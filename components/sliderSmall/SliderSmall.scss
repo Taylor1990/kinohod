@@ -1,0 +1,99 @@
+.slider_container{
+    .title{
+        height: 40px;
+        font-family: AktivGroteskCorp;
+        font-size: 32px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        color: #7f602a;
+    }
+
+    .sliders{
+        margin: 20px 0 0 0;
+
+        .slider{
+            width: 236px;
+            height: 158px;
+            display: inline-block;
+            margin: 0 0 0 20px;
+            position: relative;
+            cursor: pointer;
+
+            .poster{
+                width: inherit;
+                height: inherit;
+                float: left;
+                position: relative;
+                height: 90px;
+            }
+
+            .icon_container{
+                    float: left;
+                    position: relative;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 22px;
+                    background-color: rgba(64, 64, 64, 0.5);
+                    text-align: center;
+                    left: 6px;
+                    bottom: 84px;
+
+                    .icon{
+                        color: white;
+                        font-size: 109%;
+                        position: relative;
+                        top: 6px;
+                    }
+                }
+
+            .poster_blur{
+                float: left;
+                position: relative;
+                width: inherit;
+                height: 68px;
+                bottom: 36px;
+                 -webkit-filter: blur(50px);
+                 filter: blur(50px);
+                 overflow: hidden;
+            }
+            .title_container{
+                float: left;
+                position: relative;
+                width: inherit;
+                height: 68px;
+                bottom: 104px;
+                padding: 10px 0 0 20px;
+
+                .title{
+                    height: 20px;
+                    font-family: NewsGothic-Cond;
+                    font-size: 16px;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.25;
+                    color: #ffffff;
+                }
+
+                .country{
+                    height: 18px;
+                    opacity: 0.75;
+                    font-family: AktivGroteskCorp;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.29;
+                    color: #ffffff;
+                }
+            }
+        }
+
+        .slider:first-child{
+            margin: 0;
+        }
+
+    }
+}

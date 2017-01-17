@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import Icons from 'react-uikit-icons'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import moment from 'moment'
 
 import SelectCity from './selectCity/selectCity.jsx'
 import Footer from './footer/footer.jsx'
@@ -16,9 +17,10 @@ import styles from './App.scss'
 import Tabs from './tabs/Tabs.jsx'
 import Ads from './ads/Ads.jsx'
 import Loader from './loader/Loader.jsx'
-import {getCities, getSliderBig, getSliderRentMovies} from './../actions'
+import {getCities, getSliderBig, getSliderRentMovies, getSliderSoonMovies, getComedyMovies, getFamilyMovies, getDetectiveMovies} from './../actions'
 import SliderBig from './sliderBig/SliderBig.jsx'
 import SliderMiddle from './sliderMiddle/SliderMiddle.jsx'
+import SliderSmall from './sliderSmall/SliderSmall.jsx'
 
 injectTapEventPlugin()
 
@@ -31,7 +33,11 @@ class App extends Component{
             signPopup: false,
             loginPopup: false,
             visSliderBig: false,
-            visSliderRentMovies: false
+            visSliderRentMovies: false,
+            visSliderSoonMovies: false,
+            visSliderComedyMovies: false,
+            visSliderFamilyMovies: false,
+            visSliderDetectiveMovies: false
         }
     }
 
@@ -42,6 +48,22 @@ class App extends Component{
 
         this.props.dispatch(getSliderRentMovies('city1', (movies_rent) => {
             this.setState({visSliderRentMovies: true, movies_rent: movies_rent})
+        }))
+
+        this.props.dispatch(getSliderSoonMovies('city1', moment(), (movies_soon) => {
+            this.setState({visSliderSoonMovies: true, movies_soon: movies_soon})
+        }))
+
+        this.props.dispatch(getComedyMovies((movies_comedy) => {
+            this.setState({visSliderComedyMovies: true, movies_comedy: movies_comedy})
+        }))
+
+        this.props.dispatch(getFamilyMovies((movies_family) => {
+            this.setState({visSliderFamilyMovies: true, movies_family: movies_family})
+        }))
+
+        this.props.dispatch(getDetectiveMovies((movies_detective) => {
+            this.setState({visSliderDetectiveMovies: true, movies_detective: movies_detective})
         }))
     }
 
@@ -165,12 +187,38 @@ class App extends Component{
                     </div>
                     <Tabs/>
                     {this.state.visSliderBig ?
-                        <SliderBig />
+                        <div className = {styles.trailers_container}>
+                            <SliderBig />
+                        </div>
                     : ''}
                     {this.state.visSliderRentMovies ?
-                        <SliderMiddle title = 'В прокате' movies = {this.state.movies_rent}/>
+                        <div className = {styles.movies_rent}>
+                            <SliderMiddle title = 'В прокате' movies = {this.state.movies_rent}/>
+                        </div>
+                    : ''}
+                    {this.state.visSliderSoonMovies ?
+                        <div className = {styles.movies_soon}>
+                            <SliderMiddle title = 'Скоро' movies = {this.state.movies_soon} showMonth = {true}/>
+                        </div>
                     : ''}
                     <Ads/>
+                    {this.state.visSliderComedyMovies ?
+                        <div className = {styles.comedy_movies}>
+                            <SliderSmall title = 'Комедии' movies = {this.state.movies_comedy} />
+                        </div>
+                    : ''}
+
+                    {this.state.visSliderFamilyMovies ?
+                        <div className = {styles.family_movies}>
+                            <SliderSmall title = 'Семейное кино' movies = {this.state.movies_family} />
+                        </div>
+                    : ''}
+
+                    {this.state.visSliderDetectiveMovies ?
+                        <div className = {styles.detective_movies}>
+                            <SliderSmall title = 'Детективы' movies = {this.state.movies_detective} />
+                        </div>
+                    : ''}
                     <Footer />
                     <Loader />
                 </div>
