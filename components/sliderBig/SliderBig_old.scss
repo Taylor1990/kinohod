@@ -1,0 +1,129 @@
+.sliderBig_container{
+    height: 354px;
+    max-width: 1360px;
+    overflow: hidden;
+
+    .poster_container{
+        position: relative;
+        width: 236px;
+        height: 354px;
+        cursor: pointer;
+        display: inline-block;
+
+        .poster{
+            float: left;
+            position:relative;
+            width: inherit;
+            height: inherit;
+        }
+
+        .icon_container{
+            cursor: pointer;
+            position: absolute;
+            border-radius: 22px;
+            background-color: rgba(64, 64, 64, 0.5);
+            top: 6px;
+            left: 6px;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+
+            .icon{
+                color: white;
+                font-size: 109%;
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+
+    .trailer_container{
+        width: 53.4vw;
+        height: 354px;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+
+        .trailer_preview{
+            height: inherit;
+            position: relative;
+            float: left;
+            width: 100%;
+        }
+
+        .icon{
+            position: relative;
+            font-size: 362%;
+            bottom: 57%;
+            left: 46%;
+            color: #ffffff;
+            float: left;
+        }
+        .title_container{
+            height: 50px;
+            float: left;
+            position: relative;
+            bottom: 50px;
+
+            .title{
+                font-family: NewsGothic-Cond;
+                font-size: 20px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.2;
+                color: #ffffff;
+                text-transform: uppercase;
+            }
+
+            .description{
+                opacity: 0.75;
+                font-family: AktivGroteskCorp;
+                font-size: 14px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.29;
+                color: #ffffff;
+            }
+        }
+    }
+
+    .trailer_next_container{
+        height: 354px;
+        position: relative;
+        display: inline-block;
+
+        .trailer_next {
+            height: inherit;
+            margin: 0 0 0 20px;
+            width: inherit;
+            float: left;
+            position: relative;
+            width: 236px;
+        }
+    }
+
+    .trailer_next_button{
+        width: 40px;
+        height: 64px;
+        border-radius: 2px;
+        background-color: rgba(64, 64, 64, 0.5);
+        margin: 0 0 0 10px;
+        float: right;
+        position: relative;
+        bottom: 208px;
+        cursor: pointer;
+
+        .icon{
+            color: #ffffff;
+            position: relative;
+            top: 12px;
+            left: 14px;
+        }
+    }
+    .motion{
+        position: relative;
+        width: 20000%;
+    }
+}

@@ -16,10 +16,10 @@ class SliderSmall extends Component {
 
     getPoster(index, height){
         return {
-            background: 'url(' + config.host + '/p/236x158/' +
+            background: 'url(' + config.host + '/p/236x236/' +
                 this.props.movies[index].poster.substr(0,2) +
                 '/' + this.props.movies[index].poster.substr(2,2) +
-                '/' +  this.props.movies[index].poster + ') 0 ' + (height !== undefined ? height : '25%'),
+                '/' +  this.props.movies[index].poster + ') 0 ' + (height !== undefined ? height : '282px'),
             backgroundSize: 'cover'
         }
     }
@@ -39,7 +39,7 @@ class SliderSmall extends Component {
                                     <div className = {styles.icon_container}>
                                         <Icons icon = 'plus' size = 'large' className = {styles.icon}/>
                                     </div>
-                                    <div className = {styles.poster_blur} style = {this.getPoster(index, '49%')}/>
+                                    <div className = {styles.poster_blur} style = {this.getPoster(index, '191px')}/>
                                     <div className = {styles.title_container}>
                                         <div className = {styles.title}>
                                             {item.title}

@@ -1,0 +1,17 @@
+.button_container{
+    width: 40px;
+    height: 64px;
+    border-radius: 2px;
+    background-color: rgba(64, 64, 64, 0.5);
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 130px;
+
+    .icon{
+        color: #ffffff;
+        position: relative;
+        top: 12px;
+        left: 14px;
+    }
+}

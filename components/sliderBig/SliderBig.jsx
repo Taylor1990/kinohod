@@ -1,76 +1,83 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Slider from 'react-slick'
 import Icons from 'react-uikit-icons'
 
-import {config} from './../../config'
 import styles from './SliderBig.scss'
+import {config} from './../../config'
+import ButtonArrow from './../buttonArrow/ButtonArrow.jsx'
 
 class SliderBig extends Component{
     constructor(props){
         super(props)
-
-        this.state = {
-            index: 0
-        }
     }
 
-    getPoster(index){
+    getPoster(item){
         return {
             background: 'url(' + config.host + '/p/236x354/' +
-                this.props.movies_now[index].poster.substr(0,2) +
-                '/' + this.props.movies_now[index].poster.substr(2,2) +
-                '/' +  this.props.movies_now[index].poster + ')',
-            backgroundSize: 'cover'
+                item.poster.substr(0,2) +
+                '/' + item.poster.substr(2,2) +
+                '/' +  item.poster + ') 0 0 / cover'
         }
     }
 
-    getTrailerPreview(index){
+    getTrailerPreview(item){
+
         return {
             background: 'url(' + config.host + '/p/970x354/' +
-                this.props.movies_now[index].trailers[0].preview.name.substr(0,2) +
-                '/' + this.props.movies_now[index].trailers[0].preview.name.substr(2,2) +
-                '/' +  this.props.movies_now[index].trailers[0].preview.name + ')',
-            backgroundSize : 'cover'
-        }
-    }
-
-    getNextTrailer(index){
-        if(index < this.props.movies_now.length){
-            return {
-                background: 'url(' + config.host + '/p/970x354/' +
-                    this.props.movies_now[index + 1].poster.substr(0,2) +
-                    '/' + this.props.movies_now[index + 1].poster.substr(2,2) +
-                    '/' + this.props.movies_now[index + 1].poster + ')',
-                backgroundSize: 'cover'
-            }
+                item.trailers[0].preview.name.substr(0,2) +
+                '/' + item.trailers[0].preview.name.substr(2,2) +
+                '/' + item.trailers[0].preview.name + ') 0 0 / cover',
         }
     }
 
     render(){
-        return(
-            <div className = {styles.sliderBig_container}>
-                <div className = {styles.poster_container}>
-                    <div className = {styles.poster}
-                         style = {this.getPoster(this.state.index)} />
-                    <Icons className = {styles.icon} icon = 'plus-circle' size = 'large' />
+        const settings = {
+            accessibility: true,
+            className : styles.sliderBig_container,
+            adaptiveHeight: false,
+            arrows: true,
+            autoplay: false,
+            dots: false,
+            draggable: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            vertical: false,
+            nextArrow: <ButtonArrow dir = "right"/>,
+            prevArrow: <ButtonArrow dir = "left"/>,
+            centerMode: true,
+            centerPadding: '30px 0 50px',
+            infinity: true
+        }
 
-                </div>
-                <div className = {styles.trailer_container}>
-                    <div className = {styles.trailer_preview}
-                         style = {this.getTrailerPreview(this.state.index)} />
-                     <Icons className = {styles.icon} icon = 'play-circle' size = 'large' />
-                     <div className = {styles.title_container}>
-                         <div className = {styles.title}>{this.props.movies_now[this.state.index].title}</div>
-                         <div className = {styles.description}>Эксклюзивный трейлер (дублированный)</div>
-                     </div>
-                </div>
-                <div className = {styles.trailer_next_container}>
-                    <div className = {styles.trailer_next}
-                         style = {this.getNextTrailer(this.state.index)}/>
-                    <div className = {styles.icon_block}>
-                         <Icons className = {styles.icon} icon = "angle-right" size = "large" />
-                     </div>
-                </div>
+        return(
+            <div>
+                <Slider {...settings} ref = {(c) => this.slider = c}>
+                    {this.props.movies.map((item) => {
+                        if(item.trailers !== null){
+                            return (
+                                <div className = {styles.slide} key = {item.title}>
+                                    <div className = {styles.poster_container}>
+                                        <div className = {styles.poster}
+                                             style = {this.getPoster(item)} />
+                                        <div className = {styles.icon_container}>
+                                             <Icons className = {styles.icon} icon = 'plus' size = 'large' />
+                                        </div>
+                                    </div>
+                                    <div className = {styles.trailer_container}>
+                                        <div className = {styles.trailer_preview}
+                                             style = {this.getTrailerPreview(item)} />
+                                         <Icons className = {styles.icon} icon = 'play-circle' size = 'large' />
+                                         <div className = {styles.title_container}>
+                                             <div className = {styles.title}>{item.title}</div>
+                                             <div className = {styles.description}>Эксклюзивный трейлер (дублированный)</div>
+                                         </div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
+                </Slider>
             </div>
         )
     }
@@ -78,7 +85,7 @@ class SliderBig extends Component{
 
 function select(state){
     return {
-        movies_now: state.app.movies_now
+        movies: state.app.movies_now
     }
 }
 
